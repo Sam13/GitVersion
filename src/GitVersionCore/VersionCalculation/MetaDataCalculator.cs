@@ -22,7 +22,8 @@
                 commitsSinceTag,
                 context.CurrentBranch.FriendlyName,
                 context.CurrentCommit.Sha,
-                context.CurrentCommit.When());
-        }
-    }
+                context.CurrentCommit.When(),
+	            context.Repository.RetrieveStatus().IsDirty ? "dirty" : string.Empty);
+		}
+	}
 }
